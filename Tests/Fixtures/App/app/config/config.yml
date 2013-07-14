@@ -1,0 +1,8 @@
+framework:                                                                                                                                                                                                         
+    secret:          fooblah
+    router:          { resource: "%kernel.root_dir%/config/routing.yml" }
+    form:            true
+    csrf_protection: true
+    session:         ~
+    translator:      { fallback: en }
+    profiler:        { only_exceptions: false }

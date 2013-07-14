@@ -1,0 +1,9 @@
+
+.idea/
+
+Tests/Fixtures/App/app/cache/
+
+composer.lock
+
+vendor/
+

@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<numbering-plan>
+	<countries>
+
+    <!--
+        Countries must be updated to contain:  
+
+        <country code="XX" prefix="00" nationalDialingPrefix="0" exampleMobile="000 000 0000">
+			<format expression="00[045789][0-9]{8}"/>
+        </country>
+    
+    -->
+		<country code="AF">
+			<format expression="937[05789][0-9]{6,7}"/>
+		</country>	
+		<country code="AL" prefix="355" nationalDialingPrefix="0" exampleMobile="04 2000 000">
+			<format expression="3556[7-9][0-9]{7}"/>
+		</country>	
+		<country code="DZ">
+			<format expression="213[5-9][0-9]{7}"/>
+			<format expression="213(55|66|77)[0-9]{7}"/>
+			<format expression="213(79[0-6]|69[7-9])[0-9]{6}"/>
+		</country>	
+		<country code="AR">
+			<format expression="54[0-9]{10}" />
+		</country>
+		<country code="AS">
+			<format expression="1684(25[248]|73[13])[0-9]{4}"/>
+		</country>	
+		<country code="AD">
+			<format expression="376[346][0-9]{5}"/>
+		</country>	
+		<country code="AO">
+			<format expression="2449[12][0-9]{7}"/>
+		</country>	
+		<country code="AI">
+			<format expression="1264(235|476|5(3[6-9]|8[1-4])|7(29|72))[0-9]{4}"/>
+		</country>	
+		<country code="AG">
+			<format expression="1268(464|7(64|7[0-5]|8[358]))[0-9]{4}"/>
+			<format expression="126872[0-9]{5}"/>
+		</country>	
+		<country code="AM">
+			<format expression="374(77|99|9[1-4])[0-9]{6}"/>
+		</country>	
+		<country code="AW">
+			<format expression="297(56|59|96)[0-9]{5}"/>
+			<format expression="297(990|99[2-9])[0-9]{4}"/>
+		</country>	
+		<country code="AU">
+			<format expression="614[0-1][0-9]{7}"/>
+			<format expression="614(2([1-4]|[7-9])|3([0-4]|[7-9])|4[89])[0-9]{6}"/>
+			<format expression="61425([1-3]|[6-8])[0-9]{5}"/>
+		</country>	
+		<country code="AT" prefix="43" nationalDialingPrefix="0" exampleMobile="000 000 0000">
+			<format expression="436[7-9][0-9]{5,11}"/>
+			<format expression="436(44|5([0-3]|[579])|6[01]|6[3-9])[0-9]{4,10}"/>
+		</country>	
+		<country code="AZ">
+			<format expression="994(40|5[015]|70)[0-9]{7}"/>
+			<format expression="99460540[0-9]{4}"/>
+		</country>	
+		<country code="BS">
+			<format expression="1242(357|359|457|557)[0-9]{4}"/>
+		</country>	
+		<country code="BH">
+			<format expression="9733[69][0-9]{6}"/>
+			<format expression="973377[0-9]{5}"/>
+			<format expression="973383[0-9]{5}"/>
+		</country>	
+		<country code="BD">
+			<format expression="8801[1-9][0-9]{8}"/>
+		</country>	
+		<country code="BB">
+			<format expression="124626[0-9]{5,8}"/>
+		</country>	
+		<country code="BY">
+			<format expression="375(29|44|33)[0-9]{7}"/>
+			<format expression="375259[0-9]{6}"/>
+		</country>	
+		<country code="BE" prefix="32" nationalDialingPrefix="0" exampleMobile="0400 000 000">
+			<format expression="324[0-9]{7,9}"/>
+		</country>	
+		<country code="BZ">
+			<format expression="501(62[01])[0-9]{4}"/>
+			<format expression="501(6[67])[0-9]{5}"/>
+		</country>	
+		<country code="BJ">
+			<format expression="2299[0-9]{7}"/>
+		</country>	
+		<country code="BM">
+			<format expression="1441([37][0-9]{6}|5[0-3][0-9]{5}|59[09][0-9]{4})"/>
+		</country>	
+		<country code="BT">
+			<format expression="97517[0-9]{6}"/>
+		</country>	
+		<country code="BO">
+			<format expression="5917(0[6-8]|1([01]|[4-9])|2([0-2]|[89])|7[0-5])[0-9]{5}"/>
+			<format expression="5917(11[2-4]|24[015])[0-9]{4}"/>
+		</country>	
+		<country code="BA" prefix="387" nationalDialingPrefix="0" exampleMobile="33 xxx xxx">
+			<format expression="3876[12356][0-9]{6,7}"/>
+		</country>	
+		<country code="BW">
+			<format expression="2677[34][0-9]{6}"/>
+		</country>	
+		<country code="BR">
+			<format expression="55(1[1-9]|2[12478]|3[1234578]|4[1-9]|5[1345]|6[1-9]|7[134579]|8[1-9]|9[1-9])[89][0-9]{7}"/>
+		</country>	
+		<country code="VI">
+			<format expression="1284(30[0-3]|44[0-5]|4(68|96|99)|54[0-4])[0-9]{4}"/>
+		</country>	
+		<country code="BN">
+			<format expression="673[78][0-9]{6}"/>
+		</country>	
+		<country code="BG" prefix="359" nationalDialingPrefix="0" exampleMobile="049 234567">
+			<format expression="359(4[38]|8[789]|98)[0-9]{5,7}"/>
+		</country>	
+		<country code="BF">
+			<format expression="2267[01568][0-9]{6}"/>
+		</country>	
+		<country code="BI">
+			<format expression="257(2955|795[6-9])[0-9]{4}"/>
+			<format expression="2577(66|77|88|99)[0-9]{5}"/>
+		</country>	
+		<country code="KH">
+			<format expression="855[19][0-9]{7,8}"/>
+		</country>
+		<country code="CA">
+			<format expression="1(403|587|780|604|778|250|204|506|709|867|906|289|519|226|705|613|807|416|647|902|418|581|450|514|438|819|306|867)[0-9]{7}" />
+		</country>
+		<country code="CL">
+			<format expression="56[0-9]{8}"/>
+		</country>
+		<country code="CM">
+			<format expression="237[79][0-9]{7}"/>
+		</country>	
+		<country code="CV">
+			<format expression="2389[0-9]{6}"/>
+		</country>	
+		<country code="KY">
+			<format expression="1345(32([3-7]|9)|5(1[467]|2[5-7]|4[5-9])|9(1[679]|2[4-9]|3[089]))[0-9]{4}"/>
+		</country>	
+		<country code="CF">
+			<format expression="2367[0257][0-9]{6}"/>
+		</country>	
+		<country code="TD">
+			<format expression="235(620|679|980)[0-9]{4}"/>
+		</country>	
+		<country code="CL">
+			<format expression="56[89][0-9]{7,8}"/>
+		</country>	
+		<country code="CN">
+			<format expression="861[35][0-9]{9}"/>
+			<format expression="86189[0-9]{8}"/>
+		</country>	
+		<country code="CO">
+			<format expression="573(00|1[012356])[0-9]{7}"/>
+		</country>	
+		<country code="KM">
+			<format expression="2693[23][0-9]{5}"/>
+		</country>	
+		<country code="CG">
+			<format expression="242[4-6][0-9]{6}"/>
+		</country>	
+		<country code="CD">
+			<format expression="243(68|80|81|88|98|99)[0-9]{7}"/>
+		</country>	
+		<country code="CK">
+			<format expression="6827[0-9]{4}"/>
+		</country>	
+		<country code="CR">
+			<format expression="5068[0-9]{6,7}"/>
+		</country>	
+		<country code="CI">
+			<format expression="2250[0-9]{7}"/>
+			<format expression="225(4[4-8]|6[067])[0-9]{6}"/>
+		</country>	
+		<country code="HR">
+			<format expression="3859[12589][0-9]{7,10}"/>
+		</country>	
+		<country code="CU">
+			<format expression="535[0-9]{6,7}"/>
+		</country>	
+		<country code="CY" prefix="357" nationalDialingPrefix="" exampleMobile="">
+			<format expression="3579(6|7[67]|9[0-689])[0-9]{5}"/>
+			<format expression="357997[14-9][0-9]{4}"/>
+		</country>	
+		<country code="CZ" prefix="420" nationalDialingPrefix="" exampleMobile="">
+			<format expression="42060[1-8][0-9]{6}"/>
+			<format expression="4207[2379][0-9]{7}"/>
+		</country>	
+		<country code="DK" prefix="45" nationalDialingPrefix="" exampleMobile="">
+			<format expression="452[0-9]{7}"/>
+			<format expression="45(3[01]|4[01]|5[0-2]|6[01])[0-9]{6}"/>
+		</country>	
+		<country code="DJ">
+			<format expression="2536[0-9]{5}"/>
+			<format expression="2538[0-5][0-9]{4}"/>
+		</country>	
+		<country code="DM">
+			<format expression="1767(2(25|35|45|65|7[567])|31[567]|61[456])[0-9]{4}"/>
+		</country>
+		<country code="DO">
+			<format expression="1809[0-9]{7}"/>
+			<format expression="1829[0-9]{7}"/>
+			<format expression="1849[0-9]{7}"/>
+		</country>
+		<country code="TL">
+			<format expression="6707[0-9]{6}"/>
+		</country>	
+		<country code="EC">
+			<format expression="593(8|9)[0-9]{6}"/>
+		</country>	
+		<country code="EG">
+			<format expression="201[01268][0-9]{7}"/>
+		</country>	
+		<country code="SV">
+			<format expression="5037[0-9]{7}"/>
+		</country>	
+		<country code="GQ">
+			<format expression="240[256][0-9]{5}"/>
+		</country>	
+		<country code="ER">
+			<format expression="29117[1-3][0-9]{4}"/>
+			<format expression="2917[0-9]{6}"/>
+		</country>	
+		<country code="EE" prefix="372" nationalDialingPrefix="" exampleMobile="8100 0000">
+			<format expression="3728[1-5][0-9]{6}"/>
+			<format expression="3725[0-9]{7}"/>
+		</country>	
+		<country code="ET">
+			<format expression="25191[0-9]{7}"/>
+		</country>	
+		<country code="FK">
+			<format expression="500[56][0-9]{4}"/>
+		</country>	
+		<country code="FO">
+			<format expression="2982[0-9]{5}"/>
+			<format expression="298(7[5-9]|9[1-5])[0-9]{4}"/>
+		</country>	
+		<country code="FJ">
+			<format expression="679(7[0-4]|9[29])[0-9]{5}"/>
+		</country>	
+		<country code="FR" prefix="33" exampleMobile="06 55 55 55 55" nationalDialingPrefix="0">
+			<format expression="336[0-9]{8}"/>
+		</country>	
+		<country code="GF">
+			<format expression="594694[0-9]{6}"/>
+		</country>	
+		<country code="PF">
+			<format expression="689[27][0-9]{5}"/>
+			<format expression="6893[01][0-9]{4}"/>
+			<format expression="68975[48][0-9]{3}"/>
+			<format expression="6894114[0-9]{2}"/>
+		</country>	
+		<country code="GA">
+			<format expression="2410[567][0-9]{6}"/>
+		</country>	
+		<country code="GM">
+			<format expression="220(7[02789]|9[7-9])[0-9]{5}"/>
+			<format expression="22077[05-9][0-9]{4}"/>
+		</country>	
+		<country code="GE">
+			<format expression="995(5[578]|77|93)[0-9]{6}"/>
+		</country>	<!-- 3xx xxxxxxx -->
+		<country code="DE" prefix="49" nationalDialingPrefix="0" exampleMobile="01505-5555555">
+			<format expression="4915(05|1[125]|2[025]|7[0578])[0-9]{7}"/>
+			<format expression="491(6[023489]|7[0-9])[0-9]{7,8}"/>
+		</country>
+		<country code="FI" prefix="382" nationalDialingPrefix="0" exampleMobile="">
+			<format expression="358(4[0-9]|50)[0-9]{7}"/>
+		</country>
+		<country code="GH">
+			<format expression="233(2[36]|54)[0-9]{7}"/>
+		</country>	
+		<country code="GI">
+			<format expression="350(5[4678]|60)[0-9]{6}"/>
+		</country>	
+		<country code="GR" prefix="30" nationalDialingPrefix="" exampleMobile="">
+			<format expression="309[347][0-9]{8}"/>
+			<format expression="3069[0349][0-9]{7}"/>
+		</country>	
+		<country code="GL">
+			<format expression="299(49|5[2-9])[0-9]{4}"/>
+		</country>	
+		<country code="GD">
+			<format expression="1473(53[3-8]|4(0[3-79]|1[04-9]|20|58))[0-9]{4}"/>
+		</country>	
+		<country code="GP">
+			<format expression="590690[0-9]{6}"/>
+		</country>	
+		<country code="GU">
+			<format expression="1671(48[238]|726|8[6-9]8)|9(22|69))[0-9]{4}"/>
+		</country>	
+		<country code="GT">
+			<format expression="502[45][0-9]{7}"/>
+		</country>	
+		<country code="GW">
+			<format expression="245[567][0-9]{6}"/>
+		</country>	
+		<country code="GN">
+			<format expression="2246[02-7][0-9]{6}"/>
+		</country>	
+		<country code="GY">
+			<format expression="5926[0-9]{6}"/>
+		</country>	
+		<country code="GG">
+			<format expression="447839[1278][0-9]{5}"/>
+			<format expression="447781[0-9]{6}"/>
+		</country>	
+		<country code="HT">
+			<format expression="509(3[3-9]|40|9[04])[0-9]{5,6}"/>
+		</country>	
+		<country code="HN">
+			<format expression="504[3789][0-9]{7}"/>
+		</country>	
+		<country code="HK">
+			<format expression="852[569][0-9]{7}"/>
+		</country>	
+		<country code="HU" prefix="36" nationalDialingPrefix="6" exampleMobile="">
+			<format expression="36[237]0[0-9]{5,7}"/>
+		</country>
+		<country code="IE">
+			<format expression="3538[0-9]{8}"/>
+		</country>
+		<country code="IS">
+			<format expression="354(95[48]|77[0-3])[0-9]{4}"/>
+			<format expression="354(6|8|38[089])[0-9]{6}"/>
+		</country>	
+		<country code="IN">
+			<format expression="919[0-9]{9}"/>
+			<format expression="9110[1-4][0-9]{8}"/>
+		</country>	
+		<country code="ID">
+			<format expression="6281[16]0[0-9]{6}"/>
+			<format expression="628[23][0-9]{7}"/>
+			<format expression="6281(1[1-9]|[235-9])[0-9]{6,7}"/>
+			<format expression="628[568][0-9]{7,8}"/>
+			<format expression="6281(1[1-9]|[235-9])[0-9]{5}"/>
+		</country>	
+		<country code="IR">
+			<format expression="9891[2678][0-9]{7}"/>
+		</country>	
+		<country code="IQ">
+			<format expression="96407[5789][0-9]{8}"/>
+		</country>	
+		<country code="IE">
+			<format expression="35308[235-9][0-9]{5,6}"/>
+		</country>	
+		<country code="IL" prefix="972" nationalDialingPrefix="0" exampleMobile="">
+			<format expression="9725[0-9]{8}"/>
+		</country>	
+		<country code="IM">
+			<format expression="447924[0-4][0-9]{5}"/>
+		</country>
+		<country code="IT" prefix="39" nationalDialingPrefix="0" exampleMobile="3555-55555">
+			<format expression="393[0-9]{8,9}"/>
+		</country>	
+		<country code="JM">
+			<format expression="1876[2-9][0-9]{6}"/>
+		</country>	
+		<country code="JP">
+			<format expression="81[89]0[0-9]{8}"/>
+		</country>	
+		<country code="JE">
+			<format expression="447(509[0125]|5372|700[378]|797[7-9]|82(23|9[789])|9780)[0-9]{5}"/>
+			<format expression="447937[0-9]{6}"/>
+		</country>	
+		<country code="JO">
+			<format expression="96274(5[4-7]|66|77)[0-9]{5}"/>
+			<format expression="9627(7[569]|8[568]|9[0567])[0-9]{6}"/>
+		</country>	
+		<country code="KZ">
+			<format expression="77(0[01257]|6[0-3]|77)[0-9]{7}"/>
+			<format expression="77(1[2-578]9[01]|2([13-7]9[01]|758))[0-9]{5}"/>
+		</country>	
+		<country code="KE">
+			<format expression="254(7[237]|84)[0-9]{7,8}"/>
+		</country>	
+		<country code="KI">
+			<format expression="686(30|69)[0-9]{3}"/>
+		</country>	
+		<country code="KP">
+			<format expression="85019[0-9]{5}"/>
+		</country>	
+		<country code="KR">
+			<format expression="821[016-9][0-9]{7,8}"/>
+		</country>	
+		<country code="KW">
+			<format expression="965[569][0-9]{6,7}"/>
+		</country>	
+		<country code="KG">
+			<format expression="996(5[14-7]|77)[0-9]{7}"/>
+			<format expression="996700[0-9]{6}"/>
+		</country>	
+		<country code="LA">
+			<format expression="85620[0-9]{7}"/>
+		</country>	
+		<country code="LV" prefix="371" nationalDialingPrefix="" exampleMobile="">
+			<format expression="3712[0-9]{6,7}"/>
+		</country>	
+		<country code="LB">
+			<format expression="961(3|70)[0-9]{6}"/>
+		</country>	
+		<country code="LS">
+			<format expression="266[56][0-9]{7}"/>
+		</country>	
+		<country code="LR">
+			<format expression="231(4[0167]|6[4-9])[0-9]{5}"/>
+			<format expression="2315[0-9]{6}"/>
+			<format expression="2317[0-9]{7}"/>
+		</country>	
+		<country code="LY">
+			<format expression="2189[12][0-9]{7}"/>
+		</country>	
+		<country code="LI">
+			<format expression="4236[0-9]{6,8}"/>
+		</country>	
+		<country code="LT" prefix="370" nationalDialingPrefix="0" exampleMobile="">
+			<format expression="3706[0-9]{7}"/>
+		</country>	
+		<country code="LU" prefix="352" nationalDialingPrefix="" exampleMobile="651 555 555">
+			<format expression="3526[0-9]{8}"/>
+		</country>	
+		<country code="MO">
+			<format expression="85366[0-9]{6}"/>
+		</country>	
+		<country code="MK" prefix="389" nationalDialingPrefix="0" exampleMobile="">
+			<format expression="3897[0125-8][0-9]{6}"/>
+		</country>
+		<country code="MX">
+			<format expression="52[0-9]{10}"/>
+		</country>	
+		<country code="MG">
+			<format expression="2613[0-3][0-9]{7}"/>
+		</country>	
+		<country code="MW">
+			<format expression="265[4589][0-9]{6}"/>
+		</country>	
+		<country code="MY">
+			<format expression="601[0-9]{7,8}"/>
+		</country>	
+		<country code="MV">
+			<format expression="960(7[6-9]|9[6-9])[0-9]{5}"/>
+		</country>	
+		<country code="ML">
+			<format expression="223[67][0-9]{7}"/>
+		</country>	
+		<country code="MT">
+			<format expression="356[79][79][0-9]{6}"/>
+			<format expression="356981[12][0-9]{4}"/>
+		</country>	
+		<country code="MH">
+			<format expression="692(45|62|23)5[0-9]{4}"/>
+		</country>	
+		<country code="MQ">
+			<format expression="596696[0-9]{6}"/>
+		</country>	
+		<country code="MR">
+			<format expression="2226[34][0-9]{5}"/>
+		</country>	
+		<country code="MU">
+			<format expression="2307[0-9]{6}"/>
+			<format expression="230(49|9[134578])[0-9]{5}"/>
+			<format expression="230(42[12389]|87[1567])[0-9]{4}"/>
+		</country>	
+		<country code="YT">
+			<format expression="269639[0-9]{6}"/>
+		</country>	
+		<country code="FM">
+			<format expression="6919[2357]0[0-9]{4}"/>
+		</country>	
+		<country code="MD">
+			<format expression="373(6([589]0|7[12])|7[89]0)[0-9]{5}"/>
+		</country>	
+		<country code="MC">
+			<format expression="377[46][0-9]{7,8}"/>
+		</country>	
+		<country code="MN">
+			<format expression="976(88|9[1569])[0-9]{6}"/>
+		</country>	
+		<country code="ME" prefix="382" nationalDialingPrefix="0" exampleMobile="">
+			<format expression="382(6[379]|70)[0-9]{3,10}"/>
+			<format expression="38268[0-9]{2,10}"/>
+		</country>	
+		<country code="MS">
+			<format expression="1664492[0-9]{4}"/>
+		</country>	
+		<country code="MA">
+			<format expression="212[167][0-9]{7}"/>
+			<format expression="212(4[0124-8]|5[01])[0-9]{6}"/>
+		</country>	
+		<country code="MZ">
+			<format expression="258[89][0-9]{8}"/>
+		</country>	
+		<country code="MM">
+			<format expression="959[0-9]{7,8}"/>
+		</country>	
+		<country code="NA">
+			<format expression="26481[0-9]{7}"/>
+		</country>	
+		<country code="NR">
+			<format expression="674555[0-9]{4}"/>
+		</country>	
+		<country code="NL" prefix="31" nationalDialingPrefix="0" exampleMobile="06-5555555">
+			<format expression="316[0-9]{8}"/>
+		</country>	
+		<country code="AN">
+			<format expression="599([59]4|98)[0-9]{5}"/>
+			<format expression="599(318|416|5(25|8[239])|71[578]|9(50|7[34]))[0-9]{4}"/>
+			<format expression="5999(7(2[0-3]|6[3567]|777))[0-9]{3}"/>
+		</country>	
+		<country code="NC">
+			<format expression="6879[0-9]{5}"/>
+			<format expression="687(7[5-9]|8[0-79])[0-9]{4}"/>
+		</country>	
+		<country code="NZ">
+			<format expression="642[01345789][0-9]{6,8}"/>
+		</country>	
+		<country code="NI">
+			<format expression="505[68][0-9]{6}"/>
+		</country>	
+		<country code="NE">
+			<format expression="2779[0-9]{7}"/>
+		</country>	
+		<country code="NG">
+			<format expression="23490[0-9]{6}"/>
+			<format expression="234(703|80[2-7])[0-9]{7}"/>
+		</country>	
+		<country code="NF">
+			<format expression="67238[0-9]{4}"/>
+		</country>	
+		<country code="NO" prefix="47" nationalDialingPrefix="" exampleMobile="">
+			<format expression="47[49][0-9]{7,8}"/>
+		</country>	
+		<country code="OM">
+			<format expression="9689[25-9][0-9]{6}"/>
+		</country>	
+		<country code="PK">
+			<format expression="923[0-9]{9}"/>
+		</country>	
+		<country code="PW">
+			<format expression="680(6[234689]0|77[59])[0-9]{4}"/>
+		</country>	
+		<country code="PS">
+			<format expression="9705[59][0-9]{7}"/>
+		</country>	
+		<country code="PA">
+			<format expression="5076[0-9]{6,7}"/>
+		</country>	
+		<country code="PG">
+			<format expression="675170[0-9]{2}"/>
+			<format expression="675189[0-9]"/>
+			<format expression="6756[1-3][0-9]{6}"/>
+			<format expression="6756[5-9][0-9]{5}"/>
+		</country>	
+		<country code="PY">
+			<format expression="5959[0-9]{8}"/>
+		</country>	
+		<country code="PE">
+			<format expression="519[0-9]{9,10}"/>
+ 			<format expression="5119[0-9]{8}"/>
+		</country>	
+		<country code="PH">
+			<format expression="639[0-9]{8,9}"/>
+		</country>	
+		<country code="PL" prefix="48" nationalDialingPrefix="0" exampleMobile="">
+			<format expression="48(5[01]|6[069]|7[89]|88)[0-9]{7}"/>
+			<format expression="4872[12][0-9]{6}"/>
+		</country>	
+		<country code="PL" prefix="48" nationalDialingPrefix="0" exampleMobile="">
+			<format expression="48(5[01]|6[069]|7[89]|88)[0-9]{7}"/>
+			<format expression="4872[12][0-9]{6}"/>
+		</country>	
+		<country code="PT" prefix="351" nationalDialingPrefix="" exampleMobile="95 555 5555">
+			<format expression="3519[0-9]{8}"/>
+		</country>	
+		<country code="PR">
+			<format expression="1(787|939)[0-9]{10}"/>
+		</country>	
+		<country code="QA">
+			<format expression="974[356][0-9]{6}"/>
+		</country>	
+		<country code="RE">
+			<format expression="26269[23][0-9]{6}"/>
+		</country>	
+		<country code="RO">
+			<format expression="407(2[0123]|4[045]|61|62|66|88)[0-9]{6}"/>
+		</country>	
+		<country code="RU">
+			<format expression="79[0-9]{9}"/>
+		</country>	
+		<country code="RW">
+			<format expression="2500[358][0-9]{6}"/>
+		</country>	
+		<country code="KN">
+			<format expression="1869(5(5[678]|6[567])|66[2-57-9]|76[2-5])[0-9]{4}"/>
+		</country>	
+		<country code="LC">
+			<format expression="1758(28[4-7]|384|4(6[01]|8[4-9])|5(1[89]|20|84)|72[034])[0-9]{4}"/>
+			<format expression="175871[0-9]{5}"/>
+		</country>	
+		<country code="PM">
+			<format expression="50855[0-9]{4}"/>
+		</country>	
+		<country code="VC">
+			<format expression="1784(4(3[0124]|5[45]|9[2-5])|5(2[6-9]|3[0-3]|93))[0-9]{4}"/>
+		</country>	
+		<country code="WS">
+			<format expression="6857[2567][0-9]{5}"/>
+		</country>	
+		<country code="SM">
+			<format expression="3786[0-9]{8,12}"/>
+		</country>	
+		<country code="ST">
+			<format expression="23960[0-9]{4}"/>
+		</country>	
+		<country code="SA">
+			<format expression="9665[0-9]{8}"/>
+		</country>	
+		<country code="SN">
+			<format expression="2217[67][0-9]{7}"/>
+		</country>	
+		<country code="RS">
+			<format expression="3816[0-9]{3,11}"/>
+		</country>	
+		<country code="SC">
+			<format expression="248[579][0-9]{5}"/>
+		</country>	
+		<country code="SL">
+			<format expression="232(25|3[03]|40|5[05]|7[678]|88)[0-9]{6}"/>
+		</country>	
+		<country code="SG">
+			<format expression="65525[0-9]{5}"/>
+			<format expression="6581[0-9]{6}"/>
+		</country>	
+		<country code="SK" prefix="421" nationalDialingPrefix="0" exampleMobile="">
+			<format expression="4219[01][0-9]{7}"/>
+			<format expression="421949[01][0-9]{6}"/>
+		</country>	
+		<country code="SI">
+			<format expression="386(3[01]|4[01]|51|6[4-9]|7[01])[0-9]{6}"/>
+		</country>	
+		<country code="SB">
+			<format expression="6776[5-9][0-9]{3}"/>
+			<format expression="677[89][0-9]{4}"/>
+		</country>	
+		<country code="SO">
+			<format expression="2529[01][0-9]{6}"/>
+		</country>	
+		<country code="ZA">
+			<format expression="27[78][0-9]{4,11}"/>
+		</country>	
+		<country code="ES" prefix="34" exampleMobile="655 555 555">
+			<format expression="346[0-9]{8}"/>
+		</country>	
+		<country code="LK">
+			<format expression="947[12578][0-9]{7}"/>
+		</country>	
+		<country code="SD">
+			<format expression="2499[12][0-9]{7}"/>
+		</country>	
+		<country code="SR">
+			<format expression="59775[0-9]{5}"/>
+			<format expression="597[89][0-9]{6}"/>
+		</country>	
+		<country code="SZ">
+			<format expression="2686[0-7][0-9]{4}"/>
+		</country>	
+		<country code="SE" prefix="46" nationalDialingPrefix="0" exampleMobile="00 - 000 000 00">
+			<format expression="467[036][0-9]{5,7}"/>
+		</country>	
+		<country code="CH" prefix="41" nationalDialingPrefix="0" exampleMobile="66 555 44 33">
+			<format expression="417[46-9][0-9]{7}"/>
+		</country>	
+		<country code="SY">
+			<format expression="9639[0-9]{8}"/>
+		</country>	
+		<country code="TW">
+			<format expression="8869[0-9]{7,8}"/>
+		</country>	
+		<country code="TJ">
+			<format expression="9929190[0-3][0-9]{4}"/>
+			<format expression="992918[68][0-9]{5}"/>
+			<format expression="9929(17|27|35|51|62|73|81|98)[0-9]{6}"/>
+		</country>	
+		<country code="TZ">
+			<format expression="2557[1-9][0-9]{7}"/>
+		</country>	
+		<country code="TH">
+			<format expression="668[013-9][0-9]{6}"/>
+		</country>	
+		<country code="TG">
+			<format expression="2289(0[1-5]|4[6-9])[0-9]{4}"/>
+		</country>	
+		<country code="TO">
+			<format expression="676(1[5-9]|4[69]|5[3-9]|6[3-9]|7[567]|8[789])[0-9]{3,5}"/>
+		</country>	
+		<country code="TT">
+			<format expression="1868(22[1-4]|4(2[01]|8[0-4])|6(20|78))[0-9]{4}"/>
+			<format expression="1868(29|4[01679]|68)[0-9]{5}"/>
+			<format expression="1868[37][0-9]{6}"/>
+		</country>	
+		<country code="TR">
+			<format expression="905[0-9]{9}"/>
+		</country>	
+		<country code="TM">
+			<format expression="9936[0-9]{7}"/>
+		</country>	
+		<country code="TC">
+			<format expression="1649(2(3[12]|4[1-5])|3(3[123]|4[1-5])|4(3[12]|4[12]))[0-9]{4}"/>
+		</country>	
+		<country code="TV">
+			<format expression="6889[0-9]{4}"/>
+		</country>	
+		<country code="UG">
+			<format expression="2567[1578][0-9]{7}"/>
+			<format expression="25670[0-4][0-9]{6}"/>
+		</country>	
+		<country code="UA">
+			<format expression="380(39|50|6[3678]|9[1-9])[0-9]{7}"/>
+		</country>
+		<country code="US" prefix="1" exampleMobile="(415) 555 1212">
+			<format expression="1[0-9]{10}"/>
+		</country>	
+		<country code="AE">
+			<format expression="9715[05][0-9]{7}"/>
+		</country>	
+		<country code="GB" prefix="44" nationalDialingPrefix="0" exampleMobile="07455 555555">
+			<format expression="447[045789][0-9]{8}"/>
+		</country>	
+		<country code="VG">
+			<format expression="1340(2(26|77)|3(32|44)|47[34]|677|998)[0-9]{4,7}"/>
+		</country>	
+		<country code="UY">
+			<format expression="5989[4-9][0-9]{6,7}"/>
+		</country>	
+		<country code="UZ">
+			<format expression="9989[0-3789][0-9]{7}"/>
+		</country>	
+		<country code="VU">
+			<format expression="678(5[45]|77)[0-9]{5}"/>
+		</country>	
+		<country code="VE">
+			<format expression="58(41|25)[24-8][0-9]{7}"/>
+		</country>	
+		<country code="VN">
+			<format expression="841(2[1236]|6[6-9])[0-9]{7}"/>
+			<format expression="84(2|4|9)[0-9]{8}"/>
+		</country>	
+		<country code="WF">
+			<format expression="6819[0-9]{5}"/>
+		</country>	
+		<country code="YE">
+			<format expression="9677[137][0-9]{7}"/>
+		</country>	
+		<country code="ZM">
+			<format expression="2609[567][0-9]{6,7}"/>
+		</country>	
+		<country code="ZW">
+			<format expression="263(11|23|91)[0-9]{6}"/>
+		</country>	
+	</countries>
+</numbering-plan>
+
