@@ -8,12 +8,14 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class MsisdnFactoryTest extends WebTestCase
 {
 
-    protected static $factory;
+    protected static $factory = null;
 
     public function setUp()
     {
-        self::createClient();
-        self::$factory = self::$kernel->getContainer()->get('lmh_msisdn.msisdn_factory');
+        if(is_null(self::$factory)) {
+            self::createClient();
+            self::$factory = self::$kernel->getContainer()->get('lmh_msisdn.msisdn_factory');
+        }
     }
 
     /**
@@ -21,8 +23,8 @@ class MsisdnFactoryTest extends WebTestCase
      */
     public function testGet($expectException, $country, $mobileNumber, $isMsisdn = false)
     {
-        if($expectException) {
-            $this->setExpectedException('Lmh\Bundle\MsisdnBundle\Exception\InvalidFormatException');
+        if(false !== $expectException) {
+            $this->setExpectedException($expectException);
         }
 
         $msisdn = self::$factory->get($country, $mobileNumber, $isMsisdn);
@@ -41,7 +43,9 @@ class MsisdnFactoryTest extends WebTestCase
 
     public function provideTestGetData()
     {
-        $enabledCountries = array('AT', 'DE', 'ES', 'FR', 'GB', 'LU', 'NL', 'PT');
+        $enabledCountries = array(
+            'AT', 'BE', 'BG', 'CH', 'DE', 'EE', 'ES', 'FR', 'GB', 'IT', 'LU', 'NL', 'PT', 'SE'
+        );
 
         $fixturesFilename = __DIR__.'/../fixtures/test-msisdns-valid.csv';
 
@@ -59,10 +63,14 @@ class MsisdnFactoryTest extends WebTestCase
         while(false !== ($csvLineData = fgetcsv($fileHandle, 1000, ','))) {
 
             if(false === array_search($csvLineData[1], $enabledCountries)) {
+                $fixtures[] = array(
+                    'Lmh\Bundle\MsisdnBundle\Exception\MissingFormatConfigurationException',
+                    $csvLineData[1],
+                    $csvLineData[2],
+                    true,
+                );
                 continue;
             }
-
-            print_r($csvLineData);
 
             $fixtures[] = array(
                 false,
@@ -71,26 +79,8 @@ class MsisdnFactoryTest extends WebTestCase
                 true,
             );
         }
-        return $fixtures;
 
-        return array(
-            array(
-                false,
-                'US',
-                '4156014888',
-            ),
-            array(
-                false,
-                'US',
-                '4156014888',
-                false,
-            ),
-            array(
-                true,
-                'US',
-                '4156014888',
-                true,
-            ),
-        );
+        fclose($fileHandle);
+        return $fixtures;
     }
 }

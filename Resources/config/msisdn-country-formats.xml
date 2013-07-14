@@ -227,7 +227,7 @@
 		</country>	
 		<country code="EE" prefix="372" nationalDialingPrefix="" exampleMobile="8100 0000">
 			<format expression="3728[1-5][0-9]{6}"/>
-			<format expression="3725[0-9]{7}"/>
+			<format expression="3725[0-9]{6,7}"/>
 		</country>	
 		<country code="ET">
 			<format expression="25191[0-9]{7}"/>
@@ -652,7 +652,7 @@
 		<country code="ZA">
 			<format expression="27[78][0-9]{4,11}"/>
 		</country>	
-		<country code="ES" prefix="34" exampleMobile="655 555 555">
+		<country code="ES" prefix="34" nationalDialingPrefix="" exampleMobile="655 555 555">
 			<format expression="346[0-9]{8}"/>
 		</country>	
 		<country code="LK">

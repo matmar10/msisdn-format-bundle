@@ -3,6 +3,8 @@
 namespace Lmh\Bundle\MsisdnBundle\Service;
 
 use Lmh\Bundle\MsisdnBundle\Entity\MsisdnFormat;
+use Lmh\Bundle\MsisdnBundle\Exception\MissingFormatConfigurationException;
+use RuntimeException;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Yaml\Parser;
@@ -23,12 +25,17 @@ class MsisdnFormatConfigurationService
     {
         self::$msisdnFormatConfigFilename = $msisdnFormatConfigFilename;
         self::$xml = new XMLReader();
-        self::$xml->open(self::$msisdnFormatConfigFilename);
     }
 
     public function getCountries($countries)
     {
         $this->setCountryData($countries);
+        foreach($countries as $country) {
+            // assert that the format was found
+            if(false === array_key_exists($country, self::$countryFormats)) {
+                throw new MissingFormatConfigurationException("No msisdn configuration node found for the requested country '$country' in file '" . self::$msisdnFormatConfigFilename . "'");
+            }
+        }
         return array_intersect_key(self::$countryFormats, array_flip($countries));
     }
 
@@ -36,6 +43,10 @@ class MsisdnFormatConfigurationService
     {
         if(!array_key_exists($country, self::$countryFormats)) {
             $this->setCountryData($country);
+            // assert that the format was found
+            if(false === array_key_exists($country, self::$countryFormats)) {
+                throw new MissingFormatConfigurationException("No msisdn configuration node found for the requested country '$country' in file '" . self::$msisdnFormatConfigFilename . "'");
+            }
         }
         
         $msisdnFormat = self::$countryFormats[$country];
@@ -50,7 +61,12 @@ class MsisdnFormatConfigurationService
 
     public function setCountryData($targetCountryOrCountries = null)
     {
+
         $xml = self::$xml;
+        $xml->open(self::$msisdnFormatConfigFilename);
+
+        $targets = is_array($targetCountryOrCountries) ?
+            $targetCountryOrCountries : array( $targetCountryOrCountries );
 
         while($xml->read()) {
 
@@ -64,12 +80,8 @@ class MsisdnFormatConfigurationService
             $country = $xml->value;
 
             // check this is the target country, if requested
-            if(!is_null($targetCountryOrCountries)) {
-                if(is_array($targetCountryOrCountries)) {
-                    if(false == array_search($country, $targetCountryOrCountries)) {
-                        continue;
-                    }
-                } elseif($country !== $targetCountryOrCountries) {
+            if(!is_null($targets)) {
+                if(false === array_search($country, $targets)) {
                     continue;
                 }
             }
@@ -81,58 +93,67 @@ class MsisdnFormatConfigurationService
                 break;
             }
         }
+
+        $xml->close();
     }
 
     protected function buildMsisdnFormat(XmlReader $xml, $country)
     {
 
-            $formats = array();
-            $prefix = null;
-            $nationalDialingPrefix = null;
-            $exampleMobile = null;
+        $formats = array();
+        $prefix = null;
+        $nationalDialingPrefix = null;
+        $exampleMobile = null;
+        $missingAttributeMessage = "No msisdn '%s' attribute found for country node '$country' in configuration file '" . self::$msisdnFormatConfigFilename . "'";
 
-            // save the prefix
-            if($xml->moveToAttribute('prefix')) {
-                $prefix = $xml->value;
+        // save the prefix
+        if(!$xml->moveToAttribute('prefix')) {
+            throw new MissingFormatConfigurationException(sprintf($missingAttributeMessage, 'prefix'));
+        }
+        $prefix = $xml->value;
+
+        // save the national dialing prefix
+        if(!$xml->moveToAttribute('nationalDialingPrefix')) {
+            throw new MissingFormatConfigurationException(sprintf($missingAttributeMessage, 'nationalDialingPrefix'));
+        }
+        $nationalDialingPrefix = $xml->value;
+
+        // save the example mobile number
+        if(!$xml->moveToAttribute('exampleMobile')) {
+            throw new MissingFormatConfigurationException(sprintf($missingAttributeMessage, 'exampleMobile'));
+        }
+        $exampleMobile = $xml->value;
+        if('' === trim($exampleMobile)) {
+            throw new MissingFormatConfigurationException("Attribute 'exampleMobile was blank for country ndoe '$country' in configuration file '" . self::$msisdnFormatConfigFilename . "'");
+        }
+
+        // read everything, stopping at the format entities
+        while($xml->read()) {
+
+            // we found a format entity
+            if(XMLReader::ELEMENT === $xml->nodeType && 'format' === $xml->name) {
+                // grab the regular expression
+                $xml->moveToAttribute('expression');
+                $formats[] = '/^' . $xml->value . '$/';
+                continue;
             }
 
-            // save the national dialing prefix
-            if($xml->moveToAttribute('nationalDialingPrefix')) {
-                $nationalDialingPrefix = $xml->value;
+            // break to outer loop if we've advanced beyond the current country
+            if('country' === $xml->name) {
+                break;
             }
+        }
 
-            // save the example mobile number
-            if($xml->moveToAttribute('exampleMobile')) {
-                $exampleMobile = $xml->value;
-            }
+        if(!count($formats)) {
+            throw new MissingFormatConfigurationException("No 'format' node(s) present for country node for '$country' within configuration file '" . self::$msisdnFormatConfigFilename . "'.");
+        }
 
-            // read everything, stopping at the format entities
-            while($xml->read()) {
-
-                // we found a format entity
-                if(XMLReader::ELEMENT === $xml->nodeType && 'format' === $xml->name) {
-                    // grab the regular expression
-                    $xml->moveToAttribute('expression');
-                    $formats[] = '/^' . $xml->value . '$/';
-                    continue;
-                }
-
-                // break to outer loop if we've advanced beyond the current country
-                if('country' === $xml->name) {
-                    break;
-                }
-            }
-
-            $msisdnFormat = new MsisdnFormat();
-            $msisdnFormat->setCountry($country);
-            $msisdnFormat->setInternationalPrefix($prefix);
-            $msisdnFormat->setNationalDialingPrefix($nationalDialingPrefix);
-            $msisdnFormat->setExampleMobile($exampleMobile);
-            $msisdnFormat->setFormats($formats);
-            return $msisdnFormat;
-    }
-    
-    public function __destruct() {
-        self::$xml->close();
+        $msisdnFormat = new MsisdnFormat();
+        $msisdnFormat->setCountry($country);
+        $msisdnFormat->setInternationalPrefix($prefix);
+        $msisdnFormat->setNationalDialingPrefix($nationalDialingPrefix);
+        $msisdnFormat->setExampleMobile($exampleMobile);
+        $msisdnFormat->setFormats($formats);
+        return $msisdnFormat;
     }
 }
