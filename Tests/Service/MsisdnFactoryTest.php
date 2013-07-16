@@ -47,7 +47,7 @@ class MsisdnFactoryTest extends WebTestCase
             'AT', 'BE', 'BG', 'CH', 'DE', 'EE', 'ES', 'FR', 'GB', 'IT', 'LU', 'NL', 'PT', 'SE'
         );
 
-        $fixturesFilename = __DIR__.'/../fixtures/test-msisdns-valid.csv';
+        $fixturesFilename = __DIR__.'/../Fixtures/test-msisdns-valid.csv';
 
         $fileHandle = fopen($fixturesFilename, 'r');
         if(!$fileHandle) {
