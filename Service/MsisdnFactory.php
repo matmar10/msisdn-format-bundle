@@ -24,6 +24,8 @@ class MsisdnFactory
     }
 
     /**
+     * Builds a msisdn object for the specified country based on the provided mobile number
+     *
      * @param string $country The country to build the msisdn for
      * @param string $mobileNumber The mobile number or msisdn to build from
      * @param bool $isMsisdn Whether the supplied number is already a msisdn
