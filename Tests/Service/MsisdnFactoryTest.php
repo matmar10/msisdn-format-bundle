@@ -4,10 +4,12 @@ namespace Lmh\Bundle\MsisdnBundle\Tests\Service;
 
 use RuntimeException;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\Yaml\Parser;
 
 class MsisdnFactoryTest extends WebTestCase
 {
 
+    protected static $targetCountries;
     protected static $factory = null;
 
     public function setUp()
@@ -43,12 +45,15 @@ class MsisdnFactoryTest extends WebTestCase
 
     public function provideTestGetData()
     {
-        $enabledCountries = array(
-            'AT', 'BE', 'BG', 'CH', 'DE', 'EE', 'ES', 'FR', 'GB', 'IT', 'LU', 'NL', 'PT', 'SE'
-        );
 
+        // get the list of countries which should be anticipated as passing
+        $targetCountriesFile = __DIR__.'/../Fixtures/target-countries.yml';
+        $parser = new Parser();
+        $targetCountriesData = $parser->parse(file_get_contents($targetCountriesFile));
+        $targetCountries = $targetCountriesData['countries'];
+
+        // get list of known valid msisdns to test
         $fixturesFilename = __DIR__.'/../Fixtures/test-msisdns-valid.csv';
-
         $fileHandle = fopen($fixturesFilename, 'r');
         if(!$fileHandle) {
             throw new RuntimeException("Could not open fixtures filename '$fixturesFilename'.");
@@ -62,7 +67,8 @@ class MsisdnFactoryTest extends WebTestCase
         $fixtures = array();
         while(false !== ($csvLineData = fgetcsv($fileHandle, 1000, ','))) {
 
-            if(false === array_search($csvLineData[1], $enabledCountries)) {
+            // country isn't configured yet, so expect it to fail
+            if(false === array_search($csvLineData[1], $targetCountries)) {
                 $fixtures[] = array(
                     'Lmh\Bundle\MsisdnBundle\Exception\MissingFormatConfigurationException',
                     $csvLineData[1],
@@ -72,6 +78,7 @@ class MsisdnFactoryTest extends WebTestCase
                 continue;
             }
 
+            // country is confired, expect it to pass
             $fixtures[] = array(
                 false,
                 $csvLineData[1],
