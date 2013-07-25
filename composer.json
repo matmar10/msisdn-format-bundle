@@ -1,5 +1,5 @@
 {
-    "name": "matmar10/bitcoin-by-mobile",
+    "name": "matmar10/msisdn-format-bundle",
     "description": "",
     "keywords": ["msisdn", "mobile", "validate", "constraint", "regex", "regexp", "regular expression"],
     "type": "symfony-bundle",
