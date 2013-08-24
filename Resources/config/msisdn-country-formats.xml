@@ -348,8 +348,8 @@
         <country code="IE">
             <format expression="35308[235-9][0-9]{5,6}"/>
         </country>
-        <country code="IL" prefix="972" nationalDialingPrefix="0" exampleMobile="055 22X XXXX">
-            <format expression="9725[0-9]{8}"/>
+        <country code="IL" prefix="972" nationalDialingPrefix="0" exampleMobile="0XX XXX XXXX">
+            <format expression="972[0-9]{9}"/>
         </country>
         <country code="IM">
             <format expression="447924[0-4][0-9]{5}"/>
