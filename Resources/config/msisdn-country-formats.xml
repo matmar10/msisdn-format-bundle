@@ -78,8 +78,8 @@
             <format expression="375(29|44|33)[0-9]{7}"/>
             <format expression="375259[0-9]{6}"/>
         </country>
-        <country code="BE" prefix="32" nationalDialingPrefix="0" exampleMobile="0400 000 000">
-            <format expression="324[0-9]{7,9}"/>
+        <country code="BE" prefix="32" nationalDialingPrefix="0" exampleMobile="04XX XX XX XX">
+            <format expression="324[0-9]{8}"/>
         </country>
         <country code="BZ">
             <format expression="501(62[01])[0-9]{4}"/>
