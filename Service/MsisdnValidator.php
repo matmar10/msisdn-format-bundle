@@ -25,21 +25,19 @@ class MsisdnValidator extends ConstraintValidator
 
         $msisdnFormat = $msisdn->getMsisdnFormat();
 
-        $country = $msisdnFormat->getCountry();
-
         $msisdnValue = $msisdn->getMsisdn();
 
         $countryRegexPossibilities = $msisdnFormat->getFormats();
 
         foreach($countryRegexPossibilities as $regex) {
-            if(false != preg_match($regex, $msisdnValue)) {
+            if(false !== preg_match($regex, $msisdnValue)) {
                 return true;
             }
         }
 
         $this->setMessage($constraint->message, array(
             '%msisdn%' => $msisdnValue,
-            '%country%' => $country,
+            '%country%' => $msisdnFormat->getCountry(),
         ));
 
         return false;
