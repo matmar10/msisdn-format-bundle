@@ -269,7 +269,7 @@
             <format expression="491(6[023489]|7[0-9])[0-9]{7,8}"/>
         </country>
         <country code="FI" prefix="358" nationalDialingPrefix="0" exampleMobile="050 123 45 67">
-            <format expression="358(4[0-9]|50)[0-9]{7}"/> 050 123 45 67
+            <format expression="358(4[0-9]|50)[0-9]{7}"/>
         </country>
         <country code="GH">
             <format expression="233(2[36]|54)[0-9]{7}"/>
