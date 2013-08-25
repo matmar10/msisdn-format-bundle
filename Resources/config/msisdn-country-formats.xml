@@ -635,7 +635,7 @@
             <format expression="4219[01][0-9]{7}"/>
             <format expression="421949[01][0-9]{6}"/>
         </country>
-        <country code="SI" prefix="386" nationalDialingPrefix="0" exampleMobile="000 0000">
+        <country code="SI" prefix="386" nationalDialingPrefix="0" exampleMobile="000 00 00">
             <format expression="386(3[01]|4[01]|51|6[4-9]|7[01])[0-9]{5,6}"/>
             <format expression="386(30)[0-9]{5,6}"/>
         </country>
@@ -668,7 +668,7 @@
         <country code="SE" prefix="46" nationalDialingPrefix="0" exampleMobile="00 - 000 000 00">
             <format expression="467[036][0-9]{5,7}"/>
         </country>
-        <country code="CH" prefix="41" nationalDialingPrefix="0" exampleMobile="66 555 44 33">
+        <country code="CH" prefix="41" nationalDialingPrefix="0" exampleMobile="66 555 4 33">
             <format expression="417[46-9][0-9]{7}"/>
         </country>
         <country code="SY">
