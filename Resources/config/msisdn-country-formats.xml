@@ -126,7 +126,7 @@
         <country code="KH">
             <format expression="855[19][0-9]{7,8}"/>
         </country>
-        <country code="CA">
+        <country code="CA" prefix="1" nationalDialingPrefix="1" exampleMobile="xxx xxx xxxx">
             <format expression="1(403|587|780|604|778|250|204|506|709|867|906|289|519|226|705|613|807|416|647|902|418|581|450|514|438|819|306|867)[0-9]{7}" />
         </country>
         <country code="CL">
@@ -176,7 +176,7 @@
             <format expression="2250[0-9]{7}"/>
             <format expression="225(4[4-8]|6[067])[0-9]{6}"/>
         </country>
-        <country code="HR">
+        <country code="HR" prefix="385" nationalDialingPrefix="0" exampleMobile="91 xxx xxxx">
             <format expression="3859[12589][0-9]{7,10}"/>
         </country>
         <country code="CU">
@@ -315,7 +315,7 @@
         <country code="HN">
             <format expression="504[3789][0-9]{7}"/>
         </country>
-        <country code="HK">
+        <country code="HK" prefix="852" nationalDialingPrefix="" exampleMobile="9xxx xxxx">
             <format expression="852[569][0-9]{7}"/>
         </country>
         <country code="HU" prefix="36" nationalDialingPrefix="6" exampleMobile="00 00 555-555">
@@ -384,7 +384,7 @@
         <country code="KP">
             <format expression="85019[0-9]{5}"/>
         </country>
-        <country code="KR">
+        <country code="KR" prefix="82" nationalDialingPrefix="0" exampleMobile="010 xxxx xxxxx">
             <format expression="821[016-9][0-9]{7,8}"/>
         </country>
         <country code="KW">
@@ -438,7 +438,7 @@
         <country code="MW">
             <format expression="265[4589][0-9]{6}"/>
         </country>
-        <country code="MY">
+        <country code="MY" prefix="60" nationalDialingPrefix="0" exampleMobile="18 xxx xxx">
             <format expression="601[0-9]{7,8}"/>
         </country>
         <country code="MV">
@@ -646,7 +646,7 @@
         <country code="SO">
             <format expression="2529[01][0-9]{6}"/>
         </country>
-        <country code="ZA">
+        <country code="ZA" prefix="27" nationalDialingPrefix="0" exampleMobile="72 xxx xxxx">
             <format expression="27[78][0-9]{4,11}"/>
         </country>
         <country code="ES" prefix="34" nationalDialingPrefix="" exampleMobile="655 555 555">
@@ -674,7 +674,7 @@
         <country code="SY">
             <format expression="9639[0-9]{8}"/>
         </country>
-        <country code="TW">
+        <country code="TW" prefix="866" nationalDialingPrefix="0" exampleMobile="9 xxxxxxxx">
             <format expression="8869[0-9]{7,8}"/>
         </country>
         <country code="TJ">
@@ -685,7 +685,7 @@
         <country code="TZ">
             <format expression="2557[1-9][0-9]{7}"/>
         </country>
-        <country code="TH">
+        <country code="TH" prefix="66" nationalDialingPrefix="0" exampleMobile="2-xxxxxx">
             <format expression="668[013-9][0-9]{6}"/>
         </country>
         <country code="TG">
@@ -699,7 +699,7 @@
             <format expression="1868(29|4[01679]|68)[0-9]{5}"/>
             <format expression="1868[37][0-9]{6}"/>
         </country>
-        <country code="TR">
+        <country code="TR" prefix="90" nationalDialingPrefix="0" exampleMobile="xxx xxx xxxx">
             <format expression="905[0-9]{9}"/>
         </country>
         <country code="TM">
