@@ -581,7 +581,7 @@
         <country code="RE">
             <format expression="26269[23][0-9]{6}"/>
         </country>
-        <country code="RO">
+        <country code="RO" prefix="40" nationalDialingPrefix="0" exampleMobile="0-92-xxx-xxx">
             <format expression="407(2[0123]|4[045]|61|62|66|88)[0-9]{6}"/>
         </country>
         <country code="RU">
