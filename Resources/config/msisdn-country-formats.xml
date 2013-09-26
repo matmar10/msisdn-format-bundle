@@ -127,7 +127,7 @@
             <format expression="855[19][0-9]{7,8}"/>
         </country>
         <country code="CA" prefix="1" nationalDialingPrefix="1" exampleMobile="xxx xxx xxxx">
-            <format expression="1(403|587|780|604|778|250|204|506|709|867|906|289|519|226|705|613|807|416|647|902|418|581|450|514|438|819|306|867)[0-9]{7}" />
+            <format expression="1(403|250|289|204|306|403|289|587|780|604|778|250|204|506|709|867|906|289|519|226|705|613|807|416|647|902|418|581|450|514|438|819|306|867)[0-9]{7}" />
         </country>
         <country code="CL">
             <format expression="56[0-9]{8}"/>
@@ -321,7 +321,7 @@
         <country code="HU" prefix="36" nationalDialingPrefix="6" exampleMobile="00 00 555-555">
             <format expression="36[237]0[0-9]{5,7}"/>
         </country>
-        <country code="IE">
+        <country code="IE" prefix="353" nationalDialingPrefix="0" exampleMobile="08x xxx xxxx">
             <format expression="3538[0-9]{8}"/>
         </country>
         <country code="IS">
@@ -581,7 +581,7 @@
         <country code="RE">
             <format expression="26269[23][0-9]{6}"/>
         </country>
-        <country code="RO">
+        <country code="RO" prefix="40" nationalDialingPrefix="0" exampleMobile="0-92-xxx-xxx">
             <format expression="407(2[0123]|4[045]|61|62|66|88)[0-9]{6}"/>
         </country>
         <country code="RU">
