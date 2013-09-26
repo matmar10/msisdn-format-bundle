@@ -27,49 +27,60 @@ class MsisdnFactory
      * Builds a msisdn object for the specified country based on the provided mobile number
      *
      * @param string $country The country to build the msisdn for
-     * @param string $mobileNumber The mobile number or msisdn to build from
+     * @param string $mobileNumberOrMsisdn The mobile number or msisdn to build from
      * @param bool $isMsisdn Whether the supplied number is already a msisdn
-     * @return \Lmh\Bundle\MsisdnBundle\Entity\Msisdn The constructed msisdn
-     * @throws \Lmh\Bundle\MsisdnBundle\Exception\InvalidFormatException
+     * @return \Msisdn\Entity\Msisdn The constructed msisdn
+     * @throws \Msisdn\Exception\InvalidFormatException
      */
-    public function get($country, $mobileNumber, $isMsisdn = false)
+    public function get($country, $mobileNumberOrMsisdn, $isMsisdn = false)
     {
-        $msisdnFormat = self::$configurationService->get($country);
         $msisdn = new Msisdn();
+        $msisdnFormat = self::$configurationService->get($country);
         $msisdn->setMsisdnFormat($msisdnFormat);
+        $this->setMsisdn($msisdn, $mobileNumberOrMsisdn, $isMsisdn);
 
-        if($mobileNumber instanceof Msisdn) {
-            $msisdn->setMsisdn($msisdn->getMsisdn());
-        } elseif($isMsisdn) {
-            $msisdn->setMsisdn($mobileNumber);
-        } else {
-
-            // strip out non digits
-            $mobileNumber = preg_replace('/[^0-9]/', '', $mobileNumber);
-
-            // strip the national dialing prefix, if it exists (since it's not part of a msisdn)
-            $nationalDialingPrefix = $msisdnFormat->getNationalDialingPrefix();
-            $stripped = $mobileNumber;
-            if(strlen($nationalDialingPrefix)) {
-                if(0 === strpos($mobileNumber, $nationalDialingPrefix)) {
-                    $stripped = substr($mobileNumber, strlen($nationalDialingPrefix));
-                }
-            }
-
-            // finally, prepend the international prefix
-            $msisdnValue = $msisdnFormat->getInternationalPrefix() . $stripped;
-            $msisdn->setMsisdn($msisdnValue);
-        }
-
+        // check to make sure it's valid
         $msisdnConstraint = new MsisdnConstraint();
         $constraintViolationList = self::$validator->validateValue($msisdn, $msisdnConstraint);
         if(count($constraintViolationList)) {
             $messageFormat = "Cannot build a '%s' msisdn from number '%s'.";
-            $message = sprintf($messageFormat, $country, $mobileNumber, $msisdnFormat->getExampleMobile());
+            $message = sprintf($messageFormat, $country, $mobileNumberOrMsisdn);
             throw new InvalidFormatException($message);
         }
 
         return $msisdn;
+    }
+
+    protected function setMsisdn(&$newMsisdn, $mobileOrMsisdn, $isMsisdn)
+    {
+
+        if($mobileOrMsisdn instanceof Msisdn) {
+            $newMsisdn->setMsisdn($mobileOrMsisdn->getMsisdn());
+            return;
+        }
+
+        if($isMsisdn) {
+            $newMsisdn->setMsisdn($mobileOrMsisdn);
+            return;
+        }
+
+        $msisdnFormat = $newMsisdn->getMsisdnFormat();
+
+        // strip out non digits
+        $mobileOrMsisdn = preg_replace('/[^0-9]/', '', $mobileOrMsisdn);
+
+        // strip the national dialing prefix, if it exists (since it's not part of a msisdn)
+        $nationalDialingPrefix = $msisdnFormat->getNationalDialingPrefix();
+        $stripped = $mobileOrMsisdn;
+        if(strlen($nationalDialingPrefix)) {
+            if(0 === strpos($mobileOrMsisdn, $nationalDialingPrefix)) {
+                $stripped = substr($mobileOrMsisdn, strlen($nationalDialingPrefix));
+            }
+        }
+
+        // finally, prepend the international prefix
+        $msisdnValue = $msisdnFormat->getInternationalPrefix() . $stripped;
+        $newMsisdn->setMsisdn($msisdnValue);
     }
 
 }
