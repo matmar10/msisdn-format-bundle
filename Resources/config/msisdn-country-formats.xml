@@ -686,7 +686,7 @@
             <format expression="2557[1-9][0-9]{7}"/>
         </country>
         <country code="TH" prefix="66" nationalDialingPrefix="0" exampleMobile="2-xxxxxx">
-            <format expression="668[013-9][0-9]{6}"/>
+            <format expression="668[013-9][0-9]{6,7}"/>
         </country>
         <country code="TG">
             <format expression="2289(0[1-5]|4[6-9])[0-9]{4}"/>
