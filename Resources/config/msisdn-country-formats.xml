@@ -243,7 +243,7 @@
             <format expression="679(7[0-4]|9[29])[0-9]{5}"/>
         </country>
         <country code="FR" prefix="33" exampleMobile="06 55 55 55 55" nationalDialingPrefix="0">
-            <format expression="336[0-9]{8}"/>
+            <format expression="33[67][0-9]{8}"/>
         </country>
         <country code="GF">
             <format expression="594694[0-9]{6}"/>

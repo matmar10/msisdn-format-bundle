@@ -4,6 +4,7 @@ countries:
     - BA
     - BE
     - BG
+    - CA
     - CH
     - CY
     - CZ
@@ -15,6 +16,7 @@ countries:
     - FR
     - GB
     - GR
+    - HK
     - HU
     - IL
     - IT
@@ -23,6 +25,7 @@ countries:
     - LV
     - ME
     - MK
+    - MY
     - NL
     - NO
     - PL
@@ -30,4 +33,7 @@ countries:
     - SE
     - SI
     - SK
-
+    - TH
+    - TR
+    - TW
+    - ZA
