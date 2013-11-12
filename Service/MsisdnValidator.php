@@ -30,9 +30,11 @@ class MsisdnValidator extends ConstraintValidator
         $countryRegexPossibilities = $msisdnFormat->getFormats();
 
         foreach($countryRegexPossibilities as $regex) {
-            if(false !== preg_match($regex, $msisdnValue)) {
-                return true;
+            // preg_match returns the number of matches, 0 indicates no matches
+            if(!preg_match($regex, $msisdnValue)) {
+                continue;
             }
+            return true;
         }
 
         $this->setMessage($constraint->message, array(
