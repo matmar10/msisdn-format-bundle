@@ -1,31 +1,26 @@
 {
     "name": "matmar10/msisdn-format-bundle",
-    "description": "",
+    "description": "Symfony bundle for mobile phone number and msisdn validation based on country",
+    "license": "MIT",
     "keywords": ["msisdn", "mobile", "validate", "constraint", "regex", "regexp", "regular expression"],
-    "type": "symfony-bundle",
-    "license": "Apache",
     "authors": [
         {
             "name": "Matthew J. Martin",
             "email": "matthew.mar10@gmail.com"
-        },
-        {
-            "name": "John Skilbeck",
-            "email": "johnskilbeck@gmail.com"
         }
     ],
+    "minimum-stability": "stable",
     "require": {
         "php": ">=5.3.3",
         "doctrine/common": ">=2.1,<2.3-dev",
-        "symfony/symfony": "2.0.*"
+        "symfony/symfony": "~2.4"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
         "psr-0": {
-            "Lmh\\Bundle\\MsisdnBundle": ""
+            "Matmar10": ""
         }
-    },
-    "target-dir": "Lmh\\Bundle\\MsisdnBundle"
+    }
 }

@@ -1,11 +1,12 @@
 <?php
 
-namespace Lmh\Bundle\MsisdnBundle\Entity;
+namespace Matmar10\Bundle\MsisdnFormatBundle\Entity;
 
+use Matmar10\Bundle\MsisdnFormatBundle\Entity\MsisdnFormatInterface;
+use Matmar10\Bundle\MsisdnFormatBundle\Entity\MsisdnInterface;
 use Symfony\Component\Validator\Constraints as Assert;
-use Lmh\Bundle\MsisdnBundle\Entity\MsisdnFormat;
 
-class Msisdn
+class Msisdn implements MsisdnInterface
 {
 
     /**
@@ -39,7 +40,7 @@ class Msisdn
             substr($this->msisdn, strlen($this->msisdnFormat->getInternationalPrefix()));
     }
 
-    public function setMsisdnFormat(MsisdnFormat $msisdnFormat)
+    public function setMsisdnFormat(MsisdnFormatInterface $msisdnFormat)
     {
         $this->msisdnFormat = $msisdnFormat;
     }

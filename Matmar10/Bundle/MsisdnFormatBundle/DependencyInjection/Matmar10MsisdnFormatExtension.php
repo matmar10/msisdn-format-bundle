@@ -1,13 +1,13 @@
 <?php
 
-namespace Lmh\Bundle\MsisdnBundle\DependencyInjection;
+namespace Matmar10\Bundle\MsisdnFormatBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\Config\FileLocator;
 
-class LmhMsisdnExtension extends Extension {
+class Matmar10MsisdnFormatExtension extends Extension {
 
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -15,7 +15,7 @@ class LmhMsisdnExtension extends Extension {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('lmh_msisdn.formats_filename', $config['formats_filename']);
+        $container->setParameter('matmar10_msisdn_format.formats_filename', $config['formats_filename']);
 
         // load the services now that configurations have been loaded
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
@@ -24,6 +24,6 @@ class LmhMsisdnExtension extends Extension {
 
     public function getAlias()
     {
-        return 'lmh_msisdn';
+        return 'matmar10_msisdn_format';
     }
 }

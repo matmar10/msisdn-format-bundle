@@ -1,10 +1,11 @@
 <?php
 
-namespace Lmh\Bundle\MsisdnBundle\Entity;
+namespace Matmar10\Bundle\MsisdnFormatBundle\Entity;
 
+use Matmar10\Bundle\MsisdnFormatBundle\Entity\MsisdnFormatInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
-class MsisdnFormat
+class MsisdnFormat implements MsisdnFormatInterface
 {
 
     protected $country;

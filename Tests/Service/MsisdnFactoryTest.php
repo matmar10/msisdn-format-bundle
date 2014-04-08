@@ -1,6 +1,6 @@
 <?php
 
-namespace Lmh\Bundle\MsisdnBundle\Tests\Service;
+namespace Matmar10\Bundle\MsisdnFormatBundle\Tests\Service;
 
 use RuntimeException;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -16,7 +16,7 @@ class MsisdnFactoryTest extends WebTestCase
     {
         if(is_null(self::$factory)) {
             self::createClient();
-            self::$factory = self::$kernel->getContainer()->get('lmh_msisdn.msisdn_factory');
+            self::$factory = self::$kernel->getContainer()->get('matmar10_msisdn_format.msisdn_factory');
         }
     }
 
@@ -32,8 +32,8 @@ class MsisdnFactoryTest extends WebTestCase
         $msisdn = self::$factory->get($country, $mobileNumber, $isMsisdn);
 
         $this->assertInternalType('string', $msisdn->getMsisdn());
-        $this->assertInstanceOf('Lmh\Bundle\MsisdnBundle\Entity\Msisdn', $msisdn);
-        $this->assertInstanceOf('Lmh\Bundle\MsisdnBundle\Entity\MsisdnFormat', $msisdn->getMsisdnFormat());
+        $this->assertInstanceOf('Matmar10\Bundle\MsisdnFormatBundle\Entity\Msisdn', $msisdn);
+        $this->assertInstanceOf('Matmar10\Bundle\MsisdnFormatBundle\Entity\MsisdnFormat', $msisdn->getMsisdnFormat());
         $this->assertEquals($msisdn->getMsisdn(), $msisdn->__toString());
         $this->assertEquals($msisdn->getMsisdn(), (string)$msisdn);
         if($isMsisdn) {
@@ -70,7 +70,7 @@ class MsisdnFactoryTest extends WebTestCase
             // country isn't configured yet, so expect it to fail
             if(false === array_search($csvLineData[1], $targetCountries)) {
                 $fixtures[] = array(
-                    'Lmh\Bundle\MsisdnBundle\Exception\MissingFormatConfigurationException',
+                    'Matmar10\Bundle\MsisdnFormatBundle\Exception\MissingFormatConfigurationException',
                     $csvLineData[1],
                     $csvLineData[2],
                     true,

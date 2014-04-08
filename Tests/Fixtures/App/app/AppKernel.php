@@ -8,7 +8,7 @@ class AppKernel extends Kernel
     {   
         return array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new Lmh\Bundle\MsisdnBundle\LmhMsisdnBundle(),
+            new Matmar10\Bundle\MsisdnFormatBundle\Matmar10MsisdnFormatBundle(),
         );
     }   
  

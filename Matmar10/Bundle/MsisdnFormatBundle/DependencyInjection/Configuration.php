@@ -1,6 +1,6 @@
 <?php
 
-namespace Lmh\Bundle\MsisdnBundle\DependencyInjection;
+namespace Matmar10\Bundle\MsisdnFormatBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -13,7 +13,7 @@ class Configuration implements ConfigurationInterface
 
         $defaultConfigFilename = dirname(__FILE__) . '/../Resources/config/msisdn-country-formats.xml';
 
-        $treeBuilder->root('lmh_msisdn')
+        $treeBuilder->root('matmar10_msisdn_format')
             ->children()
                 ->scalarNode('formats_filename')
                     ->cannotBeEmpty()

@@ -1,6 +1,6 @@
 <?php
 
-namespace Lmh\Bundle\MsisdnBundle\Exception;
+namespace Matmar10\Bundle\MsisdnFormatBundle\Exception;
 
 use RuntimeException;
 

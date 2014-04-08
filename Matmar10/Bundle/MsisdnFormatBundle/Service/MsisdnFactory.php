@@ -1,11 +1,11 @@
 <?php
 
-namespace Lmh\Bundle\MsisdnBundle\Service;
+namespace Matmar10\Bundle\MsisdnFormatBundle\Service;
 
-use Lmh\Bundle\MsisdnBundle\Entity\Msisdn;
-use Lmh\Bundle\MsisdnBundle\Exception\InvalidFormatException;
-use Lmh\Bundle\MsisdnBundle\Service\MsisdnFormatConfigurationService;
-use Lmh\Bundle\MsisdnBundle\Validator\Constraints\Msisdn as MsisdnConstraint;
+use Matmar10\Bundle\MsisdnFormatBundle\Entity\Msisdn;
+use Matmar10\Bundle\MsisdnFormatBundle\Exception\InvalidFormatException;
+use Matmar10\Bundle\MsisdnFormatBundle\Service\MsisdnFormatConfigurationService;
+use Matmar10\Bundle\MsisdnFormatBundle\Validator\Constraints\Msisdn as MsisdnConstraint;
 use Symfony\Component\Validator\ValidatorInterface;
 
 class MsisdnFactory

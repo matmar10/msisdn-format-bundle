@@ -1,9 +1,9 @@
 <?php
 
-namespace Lmh\Bundle\MsisdnBundle\Service;
+namespace Matmar10\Bundle\MsisdnFormatBundle\Service;
 
-use Lmh\Bundle\MsisdnBundle\Entity\MsisdnFormat;
-use Lmh\Bundle\MsisdnBundle\Exception\MissingFormatConfigurationException;
+use Matmar10\Bundle\MsisdnFormatBundle\Entity\MsisdnFormat;
+use Matmar10\Bundle\MsisdnFormatBundle\Exception\MissingFormatConfigurationException;
 use RuntimeException;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
