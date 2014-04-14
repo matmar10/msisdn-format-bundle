@@ -1,0 +1,9 @@
+
+parameters:
+    matmar10_bitcoin_address_validator.service.class: Matmar10\Bundle\BitcoinAddressValidatorBundle\Validator\BitcoinAddressValidator
+
+services:
+    matmar10_bitcoin_address_validator.service:
+        class: "%matmar10_bitcoin_address_validator.service.class%"
+        tags:
+            - { name: validator.constraint_validator, alias: bitcoin_address_validator }

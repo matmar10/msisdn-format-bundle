@@ -7,3 +7,5 @@ composer.lock
 
 vendor/
 
+.DS_Store
+
