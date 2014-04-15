@@ -1,9 +1,8 @@
 {
-    "name": "matmar10/bitcoin-address-validator-bundle",
-    "version": "0.1.0",
-    "description": "Symfony bundle for bitcoin address validation",
+    "name": "matmar10/msisdn-format-bundle",
+    "description": "Symfony bundle for mobile phone number and msisdn validation based on country",
     "license": "MIT",
-    "keywords": ["bitcoin", "address", "validate", "constraint", "regex", "regexp", "regular expression"],
+    "keywords": ["msisdn", "mobile", "validate", "constraint", "regex", "regexp", "regular expression"],
     "authors": [
         {
             "name": "Matthew J. Martin",
@@ -21,7 +20,6 @@
     },
     "autoload": {
         "psr-0": {
-            "Matmar10\\Bundle\\BitcoinAddressValidatorBundle\\Tests": "",
             "Matmar10": ""
         }
     }

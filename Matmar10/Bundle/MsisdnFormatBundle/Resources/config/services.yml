@@ -1,0 +1,22 @@
+
+parameters:
+    matmar10_msisdn_format.format_configuration_service.class:  Matmar10\Bundle\MsisdnFormatBundle\Service\MsisdnFormatConfigurationService
+    matmar10_msisdn_format.msisdn_validator.class:              Matmar10\Bundle\MsisdnFormatBundle\Service\MsisdnValidator
+    matmar10_msisdn_format.msisdn_factory.class:                Matmar10\Bundle\MsisdnFormatBundle\Service\MsisdnFactory
+
+
+services:
+
+    matmar10_msisdn_format.format_configuration_service:
+        class: "%matmar10_msisdn_format.format_configuration_service.class%"
+        arguments: [ "%matmar10_msisdn_format.formats_filename%" ]
+
+    matmar10_msisdn_format.validator:
+        class: "%matmar10_msisdn_format.msisdn_validator.class%"
+        arguments: [ @matmar10_msisdn_format.format_configuration_service, @matmar10_msisdn_format.msisdn_factory ]
+        tags:
+            - { name: validator.constraint_validator, alias: msisdn_validator }
+
+    matmar10_msisdn_format.msisdn_factory:
+        class: "%matmar10_msisdn_format.msisdn_factory.class%"
+        arguments: [ @matmar10_msisdn_format.format_configuration_service, @validator ]
