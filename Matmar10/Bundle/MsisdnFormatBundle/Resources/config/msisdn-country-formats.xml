@@ -718,7 +718,7 @@
         <country code="UA">
             <format expression="380(39|50|6[3678]|9[1-9])[0-9]{7}"/>
         </country>
-        <country code="US" prefix="1" exampleMobile="(415) 555 1212">
+        <country code="US" prefix="1" nationalDialingPrefix="1" exampleMobile="(415) 555 1212">
             <format expression="1[0-9]{10}"/>
         </country>
         <country code="AE">

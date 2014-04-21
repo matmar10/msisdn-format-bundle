@@ -43,9 +43,10 @@ class MsisdnValidator extends ConstraintValidator
 
         foreach($countryRegexPossibilities as $regex) {
             // preg_match returns the number of matches, 0 indicates no matches
-            if(false !== preg_match($regex, $msisdnValue)) {
-                return;
+            if(!preg_match($regex, $msisdnValue)) {
+                continue;
             }
+            return;
         }
 
         $this->context->addViolation(

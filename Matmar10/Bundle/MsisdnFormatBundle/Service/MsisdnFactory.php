@@ -6,6 +6,7 @@ use Matmar10\Bundle\MsisdnFormatBundle\Entity\Msisdn;
 use Matmar10\Bundle\MsisdnFormatBundle\Exception\InvalidFormatException;
 use Matmar10\Bundle\MsisdnFormatBundle\Service\MsisdnFormatConfigurationService;
 use Matmar10\Bundle\MsisdnFormatBundle\Validator\Constraints\Msisdn as MsisdnConstraint;
+use Matmar10\Bundle\RestApiBundle\Exception\ConstraintViolationException;
 use Symfony\Component\Validator\ValidatorInterface;
 
 class MsisdnFactory
@@ -29,8 +30,8 @@ class MsisdnFactory
      * @param string $country The country to build the msisdn for
      * @param string $mobileNumberOrMsisdn The mobile number or msisdn to build from
      * @param bool $isMsisdn Whether the supplied number is already a msisdn
-     * @return \Msisdn\Entity\Msisdn The constructed msisdn
-     * @throws \Msisdn\Exception\InvalidFormatException
+     * @return Matmar10\Bundle\MsisdnFormatBundle\Entity\Msisdn The constructed msisdn
+     * @throws Matmar10\Bundle\MsisdnFormatBundle\Exception\InvalidFormatException
      */
     public function get($country, $mobileNumberOrMsisdn, $isMsisdn = false)
     {
@@ -38,16 +39,6 @@ class MsisdnFactory
         $msisdnFormat = self::$configurationService->get($country);
         $msisdn->setMsisdnFormat($msisdnFormat);
         $this->setMsisdn($msisdn, $mobileNumberOrMsisdn, $isMsisdn);
-
-        // check to make sure it's valid
-        $msisdnConstraint = new MsisdnConstraint();
-        $constraintViolationList = self::$validator->validateValue($msisdn, $msisdnConstraint);
-        if(count($constraintViolationList)) {
-            $messageFormat = "Cannot build a '%s' msisdn from number '%s'.";
-            $message = sprintf($messageFormat, $country, $mobileNumberOrMsisdn);
-            throw new InvalidFormatException($message);
-        }
-
         return $msisdn;
     }
 

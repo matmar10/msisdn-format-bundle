@@ -10,12 +10,14 @@ class Msisdn implements MsisdnInterface
 {
 
     /**
+     * @Assert\NotNull()
      * @Assert\NotBlank()
      */
     protected $msisdn;
 
     /**
-     * @Type("\Msisdn\Entity\MsisdnFormat")
+     * @Assert\NotNull()
+     * @Assert\NotBlank()
      */
     protected $msisdnFormat;
 
